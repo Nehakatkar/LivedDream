@@ -49,8 +49,11 @@ Route::delete('/adhesive/destroy/{id}', [AdhesiveController::class, 'destroy'])-
     Route::get('/create-categories', [CategoryController::class, 'create'])->name('category.create');
     Route::get('/index-categories', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/create-sample', [SampleController::class, 'create'])->name('sample.create');
-    Route::get('/index-sample', [SampleController::class, 'index'])->name('sample.index');
-   
+    Route::get('/samples', [SampleController::class, 'index'])->name('sample.index');
+    Route::post('/sample', [SampleController::class, 'store'])->name('sample.store');
+    Route::get('/sample/{id}/edit', [SampleController::class, 'edit'])->name('sample.edit');
+    Route::put('/sample/{id}', [SampleController::class, 'update'])->name('sample.update');
+    Route::delete('/sample/{id}', [SampleController::class, 'destroy'])->name('sample.destroy'); // Destroy route
 
     Route::get('/zones', [ZoneController::class, 'index'])->name('zones.index');
     Route::get('/zones/create', [ZoneController::class, 'create'])->name('zones.create');

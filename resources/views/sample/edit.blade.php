@@ -4,15 +4,17 @@
 <div class="content">
     <!-- Header Section -->
     <div style="display: flex; flex-direction: row; gap: 30%;">
-        <h2 class="mb-0">Create New Display Cost</h2>
-        <button class="btn btn-primary btn-save" type="submit" form="displayCostForm">Save Sample</button>
+        <h2 class="mb-0">Edit Display Cost</h2>
+        <button class="btn btn-primary btn-save" type="submit" form="displayCostForm">Update Sample</button>
     </div>
 
     <!-- Main Content Section -->
-    <form id="displayCostForm" action="{{ route('sample.store') }}" method="POST" enctype="multipart/form-data">
+    <form id="displayCostForm" action="{{ route('sample.update', $sample->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
 
         <div class="row mt-3 d-flex flex-row" style="gap:5%">
+
             <!-- Company Details -->
             <div class="card" style="width: 50%">
                 <div class="mb-5">
@@ -21,9 +23,11 @@
                     <div class="mt-4">
                         <label class="form-label">Company</label><span>*</span>
                         <select name="company_id" class="form-select">
-                            <option value="" disabled selected>Select company</option>
+                            <option value="" disabled>Select company</option>
                             @foreach ($companies as $company)
-                                <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                <option value="{{ $company->id }}" {{ $sample->company_id == $company->id ? 'selected' : '' }}>
+                                    {{ $company->name }}
+                                </option>
                             @endforeach
                         </select>
                         <span id="company_name_error" style="color: red;"></span>
@@ -31,12 +35,12 @@
 
                     <div class="mt-4">
                         <label class="form-label">Sample Name</label>
-                        <input type="text" name="sample_name" class="form-control w-100" >
+                        <input type="text" name="sample_name" class="form-control w-100" value="{{ $sample->sample_name }}">
                     </div>
 
                     <div class="mt-4">
                         <label class="form-label">Sample Cost</label>
-                        <input type="number" step="0.01" name="sample_cost" class="form-control w-100" placeholder="00" >
+                        <input type="number" step="0.01" name="sample_cost" class="form-control w-100" value="{{ $sample->sample_cost }}" placeholder="00">
                     </div>
 
                     <div class="mt-4">
@@ -44,16 +48,16 @@
                         <div style="display: flex; flex-direction: row; justify-content: space-between;">
                             <div>
                                 <label class="form-label">Length</label>
-                                <input type="number" step="0.01" name="length" class="form-control w-100" placeholder="00" >
+                                <input type="number" step="0.01" name="length" class="form-control w-100" value="{{ $sample->length }}" placeholder="00">
                             </div>
                             <div>
                                 <label class="form-label">Width</label>
-                                <input type="number" step="0.01" name="width" class="form-control w-100" placeholder="00" >
+                                <input type="number" step="0.01" name="width" class="form-control w-100" value="{{ $sample->width }}" placeholder="00">
                             </div>
                         </div>
                         <div>
                             <label class="form-label">Thickness</label>
-                            <input type="number" step="0.01" name="thickness" class="form-control" style="width: 37%;" placeholder="00" >
+                            <input type="number" step="0.01" name="thickness" class="form-control" style="width: 37%;" value="{{ $sample->thickness }}" placeholder="00">
                         </div>
                     </div>
                 </div>
@@ -71,10 +75,18 @@
                     </label>
                 </div>
                 <p class="file-support-text">Only support .jpg, .png, and .webp files</p>
+
+                @if ($sample->image)
+                    <div class="mt-3">
+                        <img src="{{ asset($sample->image) }}" alt="Current Image" width="100">
+                        <p>Current Image</p>
+                    </div>
+                @endif
             </div>
         </div>
     </form>
 </div>
+
 <script>
     document.getElementById('displayCostForm').addEventListener('submit', function(event) {
         let isValid = true;

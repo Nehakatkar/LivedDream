@@ -57,7 +57,7 @@
     <a href="#">Categories</a>
     <a href="/zones">Zones</a>
     <a href="/adhesives">Adhesive</a>
-    <a href="#">Samples</a>
+    <a href="/samples">Samples</a>
     <a href="#">Users</a>
     </div>
 
