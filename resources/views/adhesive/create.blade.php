@@ -1,15 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
-    <h2>Add New Adhesive</h2>
+<div class="container d-flex flex-column align-items-center">
+    <div class="d-flex justify-content-between align-items-center w-100 mb-4" style="max-width: 600px;">
+        <h2 class="m-0">Add New Adhesive</h2>
+        <button class="btn btn-primary btn-save" type="submit" form="adhesiveForm" id="adhesive">Save Adhesive</button>
+    </div>
+
     <form id="adhesiveForm" action="{{ route('adhesive.store') }}" method="POST" novalidate>
         @csrf
-        <button class="btn btn-primary btn-save" type="submit" id="save">Save</button>
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="m-3">
+        <!-- <button class="btn btn-primary btn-save" type="submit" id="save">Save</button> -->
+        <!-- <div class="row mt-3"> -->
+            <!-- <div class="col-md-6"> -->
+                <div class="card w-100" style="max-width: 1000px;">
+                    <div class="m-3 w-100" style=" ">
                         <h5>Adhesive Details</h5>
 
                         <!-- Company -->
@@ -108,6 +112,26 @@
             e.preventDefault(); // prevent form from submitting
         }
     });
+</script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const mainContent = document.getElementById('mainContent');
+        const saveBtn = document.getElementById('adhesive');
+        const scrollThreshold = 100;
+
+            if (mainContent && saveBtn) {
+                mainContent.addEventListener('scroll', () => {
+                    if (mainContent.scrollTop > scrollThreshold) {
+                        saveBtn.classList.add('fixed-save-btn');
+                    } else {
+                        saveBtn.classList.remove('fixed-save-btn');
+                    }
+                });
+            } else {
+                console.warn('Main content or Save button not found');
+            }
+        });
+
 </script>
 
 @endsection

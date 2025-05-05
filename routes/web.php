@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AdhesiveController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SampleController;
+use App\Http\Controllers\QuotationController;
+
 use App\Http\Controllers\ZoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/companies', [CompanyController::class, 'create'])->name('companies.create');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/companies-create', [CompanyController::class, 'create'])->name('companies.create');
     Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
     Route::get('/adhesive', [AdhesiveController::class, 'create'])->name('adhesive.create');
     Route::post('/adhesive', [AdhesiveController::class, 'store'])->name('adhesive.store');
@@ -56,7 +62,7 @@ Route::delete('/adhesive/destroy/{id}', [AdhesiveController::class, 'destroy'])-
     Route::delete('/sample/{id}', [SampleController::class, 'destroy'])->name('sample.destroy'); // Destroy route
 
     Route::get('/zones', [ZoneController::class, 'index'])->name('zones.index');
-    Route::get('/zones/create', [ZoneController::class, 'create'])->name('zones.create');
+    Route::get('/zones-create', [ZoneController::class, 'create'])->name('zones.create');
     Route::post('/zones', [ZoneController::class, 'store'])->name('zones.store');
     Route::get('/zones/{id}/edit', [ZoneController::class, 'edit'])->name('zones.edit');
     Route::post('/zones/{id}', [ZoneController::class, 'update'])->name('zones.update');
@@ -68,6 +74,20 @@ Route::delete('/adhesive/destroy/{id}', [AdhesiveController::class, 'destroy'])-
     Route::get('/edit-product-image/{id}/{product_id}', [ProductController::class, 'editProductImage'])->name('product.image.edit');
     Route::put('/update-product-image/{id}', [ProductController::class, 'updateProductImage'])->name('product.image.update');
    
+
+    
+    Route::get('/create-quotation', [QuotationController::class, 'create'])->name('quotations.create_quotation');
+    Route::get('/new-quotation', [QuotationController::class, 'newQuotation'])->name('quotations.new_quotation');
+    Route::get('/product-list', [QuotationController::class, 'productlist'])->name('quotations.product_list');
+    Route::get('/product-details', [QuotationController::class, 'productdetails'])->name('quotations.product_details');
+    Route::get('/product-cart', [QuotationController::class, 'productcart'])->name('quotations.product_cart');
+    Route::get('/client-details', [QuotationController::class, 'clientdetails'])->name('quotations.client_details');
+    Route::get('/quotation-summary', [QuotationController::class, 'quotationsummary'])->name('quotations.quatations_summary');    
+    Route::get('/quotation-terms', [QuotationController::class, 'paymentsterms'])->name('quotations.payment_terms');
+    Route::get('/quotation-payment', [QuotationController::class, 'advancedpayment'])->name('quotations.advanced_payment');
+
+    Route::get('/create-user', [UserController::class, 'createuser'])->name('user.create');
+
     // Route::resource('companies', CompanyController::class);
 
 });

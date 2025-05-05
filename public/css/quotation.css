@@ -1,0 +1,569 @@
+/* Apply background to the body */
+.bg-image {
+    background-image: url('/img/Home-lived dream 1 (1).png'); /* Ensure image is in public/img/ */
+    background-size: cover;
+    /* background-position: center; */
+    height: 50vh;
+    margin: 0;
+}
+
+/* Center and style the quotation container */
+.quotation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+}
+
+/* Style the quotation box */
+.quotation-box {
+    border: 15px solid;
+    border-image: linear-gradient(90deg, #CF5D5D 0%, #FFABAB 56%, #800000 100%);
+    border-image-slice: 1;
+    border-radius: 10%;
+   
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Corrected typo from `align-item` to `align-items` */
+   
+  
+  /* padding: 5px;
+  margin: 5px */
+}
+/* .btn-create{
+    background-color: black;
+    color: white;
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    cursor: pointer;
+} */
+
+.quotation-img img{
+    width:90%;
+    height: 90%;
+}
+.d-grid{
+    display: flex; 
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    border-radius: 5px;
+    
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width:55%;
+}
+.btn-create {
+    color: white; /* Makes text color white */
+    font-size: x-large;
+}
+.text{
+    color:grey;
+    font-size: medium;
+    margin-bottom: 5%;
+   
+}
+.area{
+    display:flex;
+    flex-direction:row;
+  
+}
+/* #area{
+    width:25%;
+    justify-content: space-around;
+    gap:5%
+
+} */
+ .installation-area {
+    margin-bottom: 20px; /* Add some spacing below the section */
+  }
+  
+  .installation-area label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* .installation-area .buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+   
+    gap: 8px; 
+  }
+  
+  .installation-area button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    justify-items: space-around;
+    
+    width:25%;
+    cursor: pointer;
+  }
+  
+  .installation-area button:hover {
+    background-color: #e0e0e0;
+    border: 2px solid blue; 
+  } */
+  .buttons {
+    display: flex;
+    gap: 15px; /* Adds space between the buttons */
+}
+
+button {
+    padding: 10px 20px; 
+    margin: 5px; 
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+  
+    cursor: pointer; 
+    background-color: white;
+    width:50%;
+}
+
+button:hover {
+   
+    border-color: rgba(3, 133, 247, 0.993);
+}
+.service{
+    width:90%;
+    height:45px;
+    border: 2px solid #ccc;
+}
+.quatation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Center vertically */
+    width: 100%;
+}
+
+
+
+.product {
+    max-width: 200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+#filterBtn{
+    width:100%;
+}
+
+#productImage{
+    width: 100%;
+    height: 60%;
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+    margin-bottom: 30px;
+    
+    
+    gap: 20px;
+}
+.product-card {
+    /* width: 250px;
+    height:350px; */
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 1rem); /* Default: 4 cards per row */
+    max-width: calc(25% - 1rem);
+
+
+    
+    border: 1px solid grey;
+}
+.product-card img.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+/* Typography */
+.product-card h6 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-card span, .product-card p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+
+
+
+.card {
+    max-width: 1150px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+textarea.form-control::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+  }
+
+.label-title {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .custom-width {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .payment-option{
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    width: 48%;
+
+  }
+  .payment-options .d-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  
+
+  .footer-options-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  #confirmationModal {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #confirmationModal > div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #confirmationModal img {
+    width: 30%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .product-info-group{
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.85rem;
+  }
+  #deleteSelected{
+    width: 40px; 
+    height: 40px;
+   
+
+  }
+  #selectAll{
+    width: 40px;
+    height: 40px;
+   
+
+  }
+  #filterBtn{
+    width: 40px; 
+    height: 40px;
+   
+  }
+  .product-card h6{
+    font-weight: bold;
+  }
+
+  .buttons button.active{
+  /* Bootstrap primary */
+    color: white;
+    border:none;
+}
+
+
+  
+
+
+  @media (min-width: 768px) and (max-width: 1400px) {
+    .quotation-box {
+        width: 70%;
+        height: 75%;
+        border-width: 10px;
+    }
+
+    .quotation-box .text {
+        font-size: 1.75rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tablet: 3 cards per row */
+    }
+    .custom-flex-lg {
+        flex-direction: column !important;
+    }
+    /* .custom-half-width {
+        width: 100% !important;
+    }
+    .custom-width {
+        width: 80%;
+      } */
+
+    .payment{
+        width: 80% !important;
+    }
+
+    .payment-option {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+  
+      .footer-options-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #confirmationModal > div {
+        width: 90%;
+        padding: 16px;
+      }
+  
+      #confirmationModal h3 {
+        font-size: 18px;
+      }
+  
+      #confirmationModal p {
+        font-size: 13px;
+      }
+  
+      #confirmationModal img {
+        width: 35%;
+      }
+
+
+      .product-card {
+        flex: 1 1 calc(33.33% - 1rem);
+        max-width: calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .quotation-box {
+        width: 90%;
+        height: auto;
+        border-width: 8px;
+        padding: 15px;
+    }
+
+    .quotation-box .text {
+        font-size: 1.85rem;
+    }
+
+    .quotation-img img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .btn-create {
+        font-size: 1.5rem;
+        padding: 0.6rem 1.2rem;
+    }
+    .text{
+        color:grey;
+        font-size: xx-small;
+        margin-bottom: 5%;
+       
+    }
+    .btn-outline-secondary{
+        width: 60%;
+        max-width: 100%;
+        /* background-color: #333; */
+        
+    }
+    .product-card {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(60% - 1rem);
+        height: auto;
+        padding: 1px;
+    }
+
+
+    
+    /* .custom-half-width {
+        width: 50% !important;
+    } */
+
+     .custom-width {
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 10px;
+
+
+      
+    }
+    .payment{
+        width: 90% !important;
+       
+    }
+
+    .payment-option {
+        padding: 8px;
+        font-size: 14px;
+        width: 100%;
+      }
+  
+      .advance-payment-container h2 {
+        font-size: 22px;
+      }
+
+      #confirmationModal > div {
+        width: 55%;
+        padding: 14px;
+      }
+  
+      #confirmationModal h3 {
+        font-size: 16px;
+      }
+  
+      #confirmationModal p {
+        font-size: 12px;
+      }
+  
+      #confirmationModal button {
+        width: 100%;
+        padding: 10px;
+      }
+  
+      #confirmationModal img {
+        width: 40%;
+      }
+   
+  
+
+}
+
+
+@media (max-width: 444px) {
+    .product-card {
+      flex: 0 0 calc(50% - 10px);
+      max-width: calc(50% - 10px);
+      /* padding: 2px; */
+    }
+  
+    .product-card h6 {
+      font-size: 0.8rem;
+    }
+  
+    .product-info-group span,
+  .product-info-group p {
+    font-size: 0.75rem; /* or x-small */
+    
+    margin: 0; /* Optional: remove extra spacing */
+  }
+
+  
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 100px;
+      object-fit: cover;
+      /* padding: 0; */
+    }
+
+    .filter{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #filterBtn{
+        width:25%;
+    }
+
+
+#deleteSelected{
+  width: 25%; 
+ 
+
+}
+#selectAll{
+  width: 25%; 
+
+
+}
+  }
+  
+  
+
+
+
