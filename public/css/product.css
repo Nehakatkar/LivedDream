@@ -1,0 +1,95 @@
+.column{
+    width:50%;
+    gap:5%;
+    height:70%;
+}
+.modal-content {
+    padding: 20px;
+    /* border-radius: 10px; */
+    border:3px solid rgb(215, 202, 202);
+}
+
+.form-check{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.form-label {
+    font-weight: bold;
+}
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+/* .border {
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+} */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+.modal-footer button {
+    width: 50%;
+}
+#product {
+    float:right; /* Moves the button to the right */
+    margin-bottom: 5px; /* Adds spacing below the button */
+}
+
+
+container {
+    max-width: 1000px;
+    margin-top: 20px;
+}
+.card {
+    padding: 20px;
+}
+.btn-save {
+    float: right;
+    margin-top: 10px;
+    /* width: 15%; */
+}
+#save{
+    position: absolute;
+    right:30%;
+    top: 20px;
+    width: 15%;
+}
+.table{
+   width:100%;
+}
+.container-fluid{
+    width:100%;
+}
+
+
+.upload-box{
+    border:2px dashed blue;
+    width:100%;
+    justify-content:center;
+    padding:10px;
+    margin: 10px;
+    height:40%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    cursor: pointer;
+    /* position: relative; */
+}
+
+
+
