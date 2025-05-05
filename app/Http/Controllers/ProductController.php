@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
+    //test
     /**
      * Display a listing of the resource.
      */
