@@ -2,10 +2,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-        <h2>Add Company</h2>
+    <div class="w-100 d-flex justify-content-between align-items-center">
+        <h2 class="m-0">Add Company</h2>
+        <button class="btn btn-primary btn-save" type="submit" id="company">Save Company</button>
+    </div>
         <form action="{{ route('companies.store') }}" method="POST">
             @csrf
-        <button class="btn btn-primary btn-save" type="submit" id="company">Save Company</button>
+        <!-- <button class="btn btn-primary btn-save" type="submit" id="company">Save Company</button> -->
         <div class="row mt-3">
             <!-- Company Details -->
             <div class="col-md-6">
@@ -191,6 +194,26 @@
                 event.target.closest('.godown-item').remove();
             }
         });
+    </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const mainContent = document.getElementById('mainContent');
+        const saveBtn = document.getElementById('company');
+        const scrollThreshold = 100;
+
+            if (mainContent && saveBtn) {
+                mainContent.addEventListener('scroll', () => {
+                    if (mainContent.scrollTop > scrollThreshold) {
+                        saveBtn.classList.add('fixed-save-btn');
+                    } else {
+                        saveBtn.classList.remove('fixed-save-btn');
+                    }
+                });
+            } else {
+                console.warn('Main content or Save button not found');
+            }
+        });
+
     </script>
 {{-- </body>
 </html> --}}

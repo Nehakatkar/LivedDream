@@ -31,7 +31,7 @@
             </div>
 
             <!-- Product Table -->
-            <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+            <div class="card mt-3 border-0 shadow-sm table-responsive w-100">
                 <table class="table align-middle">
                     <thead class="table-light">
                         <tr>
@@ -65,23 +65,22 @@
                                 <td>{{ $sample->sample_name ?? '--'}}</td>
                                 <td>{{ $sample->sample_cost }}</td>
                                 <td>
-                                    <button class="btn btn-light " data-bs-toggle="dropdown">
-                                        <!-- <i class="fas fa-eye"></i> -->
-                                        <i class="fa-solid fa-ellipsis-vertical"></i> <!-- Three-dot icon -->
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="{{ route('sample.edit', $sample->id) }}" class="dropdown-item">Edit</a>
-    
-                                        </li>
-                                        <li>
+                                    <div class="d-flex gap-2">
+                                        <div class="edit">
+                                            <a class="dropdown-item" href="{{ route('sample.edit', $sample->id) }}"><i class="fas fa-pencil-alt"></i>
+                                            </a>
+
+                                        </div>
+                                        <div class="edit">    
                                             <form action="{{ route('sample.destroy', $sample->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i></button>
                                             </form>
-                                        </li>
-                                    </ul>
+                                        
+
+                                        </div>
+                                        
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

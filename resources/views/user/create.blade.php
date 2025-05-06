@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <div class="content">
+
+    <div class="content" id="mainContent">
         <!-- Header Section -->
-        <div style="display: flex; flex-direction: row; justify-content:space-between; backgroun-color:red">
+       
+        <div style="display:flex;flex-direction:row;gap:30%">
             <h2 class="mb-0">Create User</h2>
-            <button class="btn btn-primary btn-save " type="submit" id="user" s>Save User</button>
+            <button class="btn btn-primary btn-save" type="button" id="user">Save User</button>
         </div>
 
         <!-- Main Content Section -->
@@ -14,12 +16,12 @@
                     <div class="card-body">
                         <h5>User Details</h5>
                         <div class="mt-4">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" name="fullname" class="form-control" placeholder="Enter Full name" >
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Enter Full name" >
                         </div>
                         <div class="mt-4">
-                            <label class="form-label">Email</label>
-                            <input type="text" name="user-email" class="form-control" placeholder="Enter Email">
+                            <label for="user-email">Email</label>
+                            <input type="text" id="user-email" name="user-email" class="form-control" placeholder="Enter Email">
                         </div>
                         <div class="mt-4">
                             <label class="form-label">Phone Number</label>
@@ -55,13 +57,19 @@
         </div>
 
     </div>
+   
     <script>
+        
+
         document.addEventListener("DOMContentLoaded", function () {
-        const mainContent = document.getElementById('mainContent');
-        const saveBtn = document.getElementById('user');
-        const scrollThreshold = 100;
+            const mainContent = document.getElementById('mainContent');
+            const saveBtn = document.getElementById('user');
+
+            console.log("mainContent element:", mainContent);
+            console.log("saveBtn element:", saveBtn);
 
             if (mainContent && saveBtn) {
+                const scrollThreshold = 100;
                 mainContent.addEventListener('scroll', () => {
                     if (mainContent.scrollTop > scrollThreshold) {
                         saveBtn.classList.add('fixed-save-btn');

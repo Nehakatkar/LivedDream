@@ -27,4 +27,25 @@
 
       
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const mainContent = document.getElementById('mainContent');
+        const saveBtn = document.getElementById('category');
+        const scrollThreshold = 100;
+
+            if (mainContent && saveBtn) {
+                mainContent.addEventListener('scroll', () => {
+                    if (mainContent.scrollTop > scrollThreshold) {
+                        saveBtn.classList.add('fixed-save-btn');
+                    } else {
+                        saveBtn.classList.remove('fixed-save-btn');
+                    }
+                });
+            } else {
+                console.warn('Main content or Save button not found');
+            }
+        });
+
+    </script>
+    
 @endsection

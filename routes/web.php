@@ -9,6 +9,8 @@ use App\Http\Controllers\AdhesiveController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SampleController;
 use App\Http\Controllers\QuotationController;
+use App\Http\Controllers\UserController;
+
 
 use App\Http\Controllers\ZoneController;
 use Illuminate\Support\Facades\Route;

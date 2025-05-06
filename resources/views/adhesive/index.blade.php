@@ -34,7 +34,7 @@
                 </div>
 
                 <!-- Product Table -->
-                <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+                <div class="card mt-3 border-0 shadow-sm table-responsive w-100" style="width:1200px">
                     <table class="table align-middle">
                         <thead class="table-light">
                             <tr>
@@ -59,11 +59,13 @@
                                 <td>₹{{ $adhesive->purchase_cost }}</td>
                                 <td>₹{{ $adhesive->selling_price }}</td>
                                 <td>
-                                    <a href="{{ route('adhesive.edit', $adhesive->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i>
+                                    </a>    
                                     <form action="{{ route('adhesive.destroy', $adhesive->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i></a>
+
                                     </form>
                                 </td>
                             </tr>

@@ -7,7 +7,7 @@
         <div class="col-md-12 p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="fw-bold">Company Management</h2>
-                <button class="btn btn-primary px-3"><i class="fas fa-plus"></i> Add Company</button>
+                <a href="/companies-create" class="btn btn-primary px-3"><i class="fas fa-plus"></i> Add Company</a>
             </div>
 
             <!-- Search & Filter -->
@@ -23,18 +23,19 @@
                     <!-- <button class="btn btn-light border"><i class="fa-solid fa-filter"></i> Filter</button>
                     <button class="btn btn-light border" type="button"><i class="fa-regular fa-trash fa-2xs" style="color: #ec1313;"></i></button> -->
                     <div class="d-flex gap-2">
-                        <button class="btn btn-light border" id="filterBtn">
-                            <i class="fa-solid fa-filter"></i> Filter
-                        </button>
                         <button class="btn btn" id="deleteToggle">
-                            <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;"></i>
+                            <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i>
+                        </button>
+                    
+                        <button class="btn  d-flex align-items-center justify-content-center" id="filterBtn">
+                            <i class="fa-solid fa-filter"></i> 
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product Table -->
-            <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+            <div class="card mt-3 border-0 shadow-sm table-responsive w-100">
                 <table class="table align-middle">
                     <thead class="table-light">
                         <tr>
@@ -63,15 +64,17 @@
                             <td>9900000092</td>
                             
                             <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-light " data-bs-toggle="dropdown">
-                                        <!-- <i class="fas fa-eye"></i> -->
-                                        <img src="img/Group (1).png" alt="">
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                    </ul>
+                                <div class="d-flex gap-2">
+                                    <div class="edit">
+                                        <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i>
+                                        </a>
+
+                                    </div>
+                                    <div class="edit">
+                                        <a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i></a>
+
+                                    </div>
+                                    
                                 </div>
                             </td>
                         </tr>

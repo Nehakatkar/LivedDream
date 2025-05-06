@@ -80,7 +80,8 @@
                 </table>
             </div> --}}
 
-            <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+            <div class="card mt-3 border-0 shadow-sm table-responsive">
+        
                 <table class="table align-middle">
                     <thead class="table-light">
                         <tr>
@@ -116,15 +117,13 @@
                                 <td class="text-center">{{ $product->warranty_duration ? $product->warranty_duration . ' ' . $product->warranty_type : 'No Warranty' }}</td>
                                 <td class="text-center">{{ $product->images->first()->purchase_cost ?? '--' }}</td>
                                 <td class="text-center">{{ $product->images->first()->selling_price ?? '--' }}</td>
-                                <td class="text-center"><div class="dropdown">
-                                    <button class="btn btn-light " data-bs-toggle="dropdown">
-                                        <!-- <i class="fas fa-eye"></i> -->
-                                        <i class="fa-solid fa-ellipsis-vertical"></i> <!-- Three-dot icon -->
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}">Edit</a>
-                                        </li>
+                                <td class="text-center"><div class="d-flex gap-2">
+                                   
+                                    <div class="edit">
+                                    <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"><i class="fas fa-pencil-alt"></i></a>
+                                    </div>
+                                          
+                                       
                                         <li>
                                             <a class="dropdown-item text-danger" href="#">Delete</a>
                                         </li>

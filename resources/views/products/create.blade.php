@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class="content">
-        <h2 class="mb-4">Create New Product</h2>
+        <div class="d-flex justify-content-between align-items-center w-100 mb-4" style="max-width: 800px;">
+            <h2 class="mb-0">Create New Product</h2>
+            
+        </div>
+        
 
         <form action="{{ route('products.store') }}" method="POST" id="productForm" enctype="multipart/form-data" onsubmit="return false;">
             @csrf
-            <button class="btn btn-primary"  id="product">Save Product</button>
+            <!-- <button class="btn btn-primary"  id="product">Save Product</button> -->
             <div class="row">
                 <div class="col-md-6">
 
@@ -250,6 +254,10 @@
                                                 <!-- Dynamic product rows will be added here -->
                                             </tbody>
                                         </table>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        
+                                        <button class="btn btn-primary" type="Submit" id="product">Save Product</button>
                                     </div>
                                 
                                     <!-- File Upload Section -->
