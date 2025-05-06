@@ -89,6 +89,8 @@ Route::delete('/adhesive/destroy/{id}', [AdhesiveController::class, 'destroy'])-
     Route::get('/quotation-payment', [QuotationController::class, 'advancedpayment'])->name('quotations.advanced_payment');
 
     Route::get('/create-user', [UserController::class, 'createuser'])->name('user.create');
+    Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+
 
     // Route::resource('companies', CompanyController::class);
 

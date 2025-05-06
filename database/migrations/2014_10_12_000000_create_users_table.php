@@ -17,9 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('phone_number')->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->unsignedBigInteger('admin_id')->nullable();
+            $table->foreign('admin_id')->references('id')->on('users')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
         });
+        
     }
 
     /**
