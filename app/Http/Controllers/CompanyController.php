@@ -16,7 +16,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('companies.index');
+        $userName = auth()->user()->name; 
+        return view('companies.index',compact('userName'));
     }
 
     /**
@@ -28,8 +29,9 @@ class CompanyController extends Controller
         $relations = ['Supplier', 'Distributor', 'Partner'];
         $categories = ['Electronics', 'Clothing', 'Food'];
         $zones = ['North', 'South', 'East', 'West'];
+        $userName = auth()->user()->name; 
 
-        return view('companies.create', compact('companyTypes', 'relations', 'categories', 'zones'));
+        return view('companies.create', compact('companyTypes', 'relations', 'categories', 'zones','userName'));
     }
     /**
      * Store a newly created resource in storage.

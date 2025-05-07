@@ -9,14 +9,16 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        return view('categories.index');
+        $userName = auth()->user()->name; 
+        return view('categories.index', compact('userName'));
 
     }
     public function create()
     {
       
         $categories = Category::select('id', 'name')->get();
-        return view('categories.create', compact('categories'));
+        $userName = auth()->user()->name; 
+        return view('categories.create', compact('categories','userName'));
 
     }
 }

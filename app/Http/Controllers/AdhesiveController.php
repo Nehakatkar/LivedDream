@@ -14,7 +14,8 @@ class AdhesiveController extends Controller
     public function index()
     {
         $adhesives = Adhesive::with('company')->get();
-        return view('adhesive.index', compact('adhesives'));
+        $userName = auth()->user()->name; 
+        return view('adhesive.index', compact('adhesives','userName'));
     }
 
     /**
@@ -23,7 +24,8 @@ class AdhesiveController extends Controller
     public function create()
     {
         $companies = Company::select('id','name')->get();
-        return view('adhesive.create', compact('companies'));
+        $userName = auth()->user()->name; 
+        return view('adhesive.create', compact('companies','userName'));
     }
 
     /**
@@ -68,7 +70,8 @@ class AdhesiveController extends Controller
       
             $adhesive = Adhesive::findOrFail($id);
             $companies = Company::all();
-            return view('adhesive.edit', compact('adhesive', 'companies'));
+            $userName = auth()->user()->name; 
+            return view('adhesive.edit', compact('adhesive', 'companies','userName'));
         
     
     }

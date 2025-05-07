@@ -12,8 +12,8 @@ class UserController extends Controller
     public function createuser()
     {
        
-      
-        return view('user.create');
+        $userName = auth()->user()->name; 
+        return view('user.create',compact('userName'));
     }
     public function store(Request $request)
     {

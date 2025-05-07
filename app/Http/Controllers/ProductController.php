@@ -23,14 +23,18 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $products = Product::with([
             'images',
             'category:id,name',  // Fetch only 'id' and 'name' from Category
             'company:id,name'   // Fetch only 'id' and 'name' from Company
         ])
         ->get();
+        $userName = auth()->user()->name; // or 'userName' if you have that column
+
+        return view('products.index', compact('products', 'userName'));
      
-        return view('products.index', compact('products'));
+       
     }
 
     /**
@@ -41,7 +45,8 @@ class ProductController extends Controller
         $companies = Company::select('id', 'name')->get();
         $categories = Category::select('id', 'name')->get();
         $adhesives = Adhesive::select('id', 'name')->get();
-        return view('products.create', compact('companies','categories','adhesives'));
+        $userName = auth()->user()->name; 
+        return view('products.create', compact('companies','categories','adhesives', 'userName'));
     }
 
     /**
@@ -310,9 +315,9 @@ private function processBase64Image($image, $productId, $sampleStatus, $key = 0)
             'company:id,name',
             'sizes'
         ])->findOrFail($id);
-     
+        $userName = auth()->user()->name; 
         // dd($product);
-        return view('products.edit', compact('product','categories','companies','adhesives'));
+        return view('products.edit', compact('product','categories','companies','adhesives','userName'));
     }
 
     /**
@@ -328,8 +333,9 @@ private function processBase64Image($image, $productId, $sampleStatus, $key = 0)
     {
         Session::put('previous_url', url()->previous());
         $product = ProductImage::findOrFail($id); // Find the product using product ID
+        $userName = auth()->user()->name; 
       
-        return view('product_images.edit', compact('product'));
+        return view('product_images.edit', compact('product','userName'));
     }
     public function updateProductImage(Request $request, $id)
 {

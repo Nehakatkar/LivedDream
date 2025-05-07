@@ -13,7 +13,8 @@ class ZoneController extends Controller
     public function index()
     {
         $zones = Zone::all();
-        return view('zones.index', compact('zones'));
+        $userName = auth()->user()->name; 
+        return view('zones.index', compact('zones','userName'));
     }
 
 
@@ -23,8 +24,8 @@ class ZoneController extends Controller
     {
         // $companies = Company::select('id', 'name')->get();
         // $sample = Sample::select('id', 'name')->get();
-      
-        return view('zones.create');
+        $userName = auth()->user()->name; 
+        return view('zones.create',compact('userName'));
     }
      // Store a new zone
      public function store(Request $request)
@@ -47,7 +48,8 @@ class ZoneController extends Controller
      public function edit($id)
      {
          $zone = Zone::findOrFail($id);
-         return view('zones.edit', compact('zone'));
+         $userName = auth()->user()->name; 
+         return view('zones.edit', compact('zone','userName'));
      }
  
      // Update a zone

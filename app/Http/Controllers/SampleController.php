@@ -14,16 +14,16 @@ class SampleController extends Controller
     public function index()
     {
         $samples = Sample::with('company')->get(); // Assuming you have a relationship 'company' defined in your Sample model
-    
-        return view('sample.index', compact('samples'));
+        $userName = auth()->user()->name; 
+        return view('sample.index', compact('samples','userName'));
     }
 
 
     public function create()
     {
         $companies = Company::select('id', 'name')->get();
-      
-        return view('sample.create',compact('companies'));
+        $userName = auth()->user()->name; 
+        return view('sample.create',compact('companies','userName'));
     }
     public function store(Request $request)
 {
@@ -52,7 +52,8 @@ public function edit($id)
 {
     $sample = Sample::findOrFail($id);
     $companies = Company::all();
-    return view('sample.edit', compact('sample', 'companies'));
+    $userName = auth()->user()->name; 
+    return view('sample.edit', compact('sample', 'companies','userName'));
 }
 
 public function update(Request $request, $id)

@@ -8,7 +8,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard'); // Replace 'dashboard' with your actual dashboard view name
+        $userName = auth()->user()->name; 
+        return view('dashboard',compact('userName')); // Replace 'dashboard' with your actual dashboard view name
     }
     
 }
